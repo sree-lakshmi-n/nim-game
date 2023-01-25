@@ -1,65 +1,120 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap");
 
 :root {
-  --dark-shade: #5c3c49;
-  --light-shade: #e1cea7;
-  --lighter-shade: #fbbe26;
-
-  --white: #f8f8f8;
-  --grey: #8c8792;
-  --brown: #a45556;
-  --blue: #466182;
+  --main-bg: hsl(222, 26%, 31%);
+  --screen-bg: hsl(224, 36%, 15%);
+  --button-bg: hsl(225, 21%, 49%);
+  --text-color-light: hsl(0, 0%, 100%);
+  --text-color-dark: hsl(221, 14%, 31%);
+  --instructions-bg: hsl(30, 25%, 89%);
 }
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
+
 body {
   font-family: "Roboto", sans-serif;
   line-height: 1;
+  background-color: var(--main-bg);
+  color: var(--text-color-light);
 }
+
+/* Reusable Classes */
+
 .flex-col-center {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
+.btn {
+  padding: 1em;
+  border: none;
+  background-color: var(--button-bg);
+  color: var(--dark-shade);
+  font-family: inherit;
+  cursor: pointer;
+  border-radius: 0.4rem;
+  -webkit-border-radius: 0.4rem;
+  -moz-border-radius: 0.4rem;
+  -ms-border-radius: 0.4rem;
+  -o-border-radius: 0.4rem;
+  font-size: 1rem;
+}
+.btn:hover {
+  opacity: 0.8;
+}
+.btn:active {
+  transform: translateY(4px);
+}
+
+.hide {
+  display: none;
+}
+
+/* Home Page */
 .home-page {
-  background-color: var(--brown);
-  color: var(--white);
+  background-color: var(--dark-shade);
+  color: var(--light-shade);
   min-height: 100vh;
   gap: 1.8rem;
 }
 .home-page__title {
-  font-size: 3.2rem;
+  font-size: 3.6rem;
   font-weight: 500;
 }
+.btn-wrapper {
+  display: flex;
+  gap: 2.4rem;
+}
+.btn-wrapper > .btn {
+  padding: 0.8rem 2.4rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  border-radius: 0.4rem;
+  -webkit-border-radius: 0.4rem;
+  -moz-border-radius: 0.4rem;
+  -ms-border-radius: 0.4rem;
+  -o-border-radius: 0.4rem;
+}
 
+/* Game Area */
 #game-area {
   width: 70%;
   margin: auto;
   text-align: center;
+  background-color: var(--screen-bg);
+  padding: 2.4rem;
 }
 .header {
   width: 90%;
   margin: auto;
-  color: #5c3c49;
+  padding: 3.2rem 0 0.4rem;
 }
-.header > h1 {
+.title {
+  text-align: center;
+  margin-bottom: 3.2rem;
+}
+.btn-instructions {
+  margin-bottom: 1.2rem;
+}
+.instructions {
+  background-color: var(--screen-bg);
+  color: var(--dark-shade);
+  padding: 1.4em 1.5em;
+  line-height: 1.5;
+  font-weight: 300;
+  margin-bottom: 3.2rem;
+}
+#active-player {
+  margin: 0.8rem 0;
+  display: block;
   text-align: center;
 }
-.header > div {
-  background-color: #5c3c49;
-  color: #e1cea7;
-  padding: 0.4em 1.5em;
-}
-.header > span {
-  margin-top: 1em;
-  display: block;
-}
 .row {
-  margin: 1.2em 0;
+  margin: 0.4rem 0;
 }
 .match {
   background: #e1cea7;
@@ -82,8 +137,13 @@ body {
   line-height: 50px;
   border: none;
   padding: 0 0.6em;
-  background-color: #d08974;
-  color: white;
+  background-color: var(--button-bg);
+  cursor: pointer;
+  border-radius: 0.4rem;
+  -webkit-border-radius: 0.4rem;
+  -moz-border-radius: 0.4rem;
+  -ms-border-radius: 0.4rem;
+  -o-border-radius: 0.4rem;
 }
 .show {
   visibility: visible;
@@ -94,32 +154,26 @@ body {
 .disable-pointer {
   pointer-events: none;
 }
+.result-section {
+  background-color: var(--dark-shade);
+  color: var(--light-shade);
+  min-height: 100vh;
+  gap: 1.8rem;
+}
 #result {
-  background-color: #5c3c49;
-  color: #e1cea7;
   text-align: center;
-  font-size: 32px;
-  width: 20%;
-  margin: auto;
+  font-size: 3.2rem;
+}
+#result > .btn {
+  background-color: var(--light-shade);
+  color: var(--dark-shade);
 }
 #control-buttons {
   display: flex;
   justify-content: space-around;
   margin: 4em 1em 0.4em 1em;
 }
-.buttons {
-  padding: 1em;
-  border: none;
-  background-color: #5c3c49;
-  color: #e1cea7;
-  font-family: inherit;
-}
-.buttons:hover {
-  opacity: 0.6;
-}
-.buttons:active {
-  transform: translateY(4px);
-}
+
 .row-label:hover {
   opacity: 0.6;
 }
