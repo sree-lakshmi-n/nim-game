@@ -11,24 +11,42 @@
     <main class="home-page flex-col-center">
       <h1 class="home-page__title">Classic Nim Game</h1>
       <div class="btn-wrapper">
-        <button class="btn btn-start">Start</button
-        ><button class="btn btn-instructions">Instructions</button>
+        <button class="btn btn-start" onclick="startGame()">Start</button>
       </div>
     </main>
-    <!-- <header class="header">
-		<h1>Play Nim against your computer!</h1>
-    <div>
-      <p>In one move, you can remove any number of matches but only from one row. Select any 'Row button' and click it to REMOVE matches. After each move click 'PC move' to make the computer play. You win if you leave the LAST match for the computer.</p>
-      <p>At the start of a game, you have the first move, unless you allow the computer to play first by pressing the 'PC move' button.</p>
-    </div>
-		<span id="active-player"></span><br>
-		<span id="result"></span>
-	</header>
-	<main id="game-area"></main>
-	<section id="control-buttons">
-		<button id="new-game-btn" class = "buttons" onclick="newGame()">New Game</button>
-		<button id="pc-move-btn" class = "buttons" onclick="makeMove()">PC Move</button>
-	</section> -->
+    <main class="game-page hide">
+      <header class="header">
+        <h1 class="title">Nim Game</h1>
+        <button class="btn btn-instructions" onclick="toggleInstructions(this)">
+          See instructions
+        </button>
+        <div class="instructions hide">
+          <p>
+            In one move, you can remove any number of matches but only from one
+            row. Select any 'Row button' and click it to REMOVE matches. After
+            each move click 'PC move' to make the computer play. You win if you
+            leave the LAST match for the computer.
+          </p>
+          <p>
+            At the start of a game, you have the first move, unless you allow
+            the computer to play first by pressing the 'PC move' button.
+          </p>
+        </div>
+        <span id="active-player"></span>
+      </header>
+      <main id="game-area"></main>
+      <section id="control-buttons">
+        <button class="new-game-btn btn" onclick="newGame()">New Game</button>
+        <button id="pc-move-btn" class="btn" onclick="makeMove()">
+          PC Move
+        </button>
+      </section>
+    </main>
+    <main class="result-section flex-col-center hide">
+      <div id="result" class=""></div>
+      <button class="new-game-btn btn" onclick="newGame()">New Game</button>
+      <button class="home-btn btn" onclick="homePage()">Home</button>
+    </main>
     <script src="script.js"></script>
   </body>
 </html>
