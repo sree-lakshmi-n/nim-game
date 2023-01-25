@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+*,*::before,*::after{
+	box-sizing: border-box;
+}
+body{
+  font-family: 'Roboto', sans-serif;
+}
+#game-area{
+	width: 70%;
+	margin: auto;
+	text-align: center;
+}
+.header{
+  width: 90%;
+  margin: auto;
+  color: #5C3C49;
+}
+.header > h1{
+  text-align: center;
+}
+.header > div{
+  background-color:#5C3C49;
+  color: #E1CEA7; 
+  padding: 0.4em 1.5em;
+}
+.header > span{
+  margin-top: 1em;
+  display: block;
+}
+.row{
+	margin: 1.2em 0;
+}
+.match{
+	background: #E1CEA7;
+	width: 4px;
+	height: 50px;
+	margin: 0 6px;
+	display: inline-block;
+	position: relative;
+}
+.match::before{
+	content: "";
+	background: #FBBE26;
+	padding: 3px;
+	border-radius: 50%;
+	position: absolute;
+	left: -1px;
+}
+.row-label{
+	float: right;
+	line-height: 50px;
+	border: none;
+	padding: 0 0.6em;
+  background-color: #D08974;
+  color: white;
+}
+.show{
+	visibility: visible;
+}
+.hide{
+	visibility: hidden;
+}
+.disable-pointer{
+	pointer-events: none;
+}
+#result{
+	background-color: #5C3C49;
+  color: #E1CEA7;
+	text-align: center;
+	font-size: 32px;
+  width: 20%;
+  margin: auto;
+}
+#control-buttons{
+  display: flex;
+  justify-content: space-around;
+  margin: 4em 1em 0.4em 1em;
+}
+.buttons{
+  padding: 1em;
+  border: none;
+  background-color: #5C3C49;
+  color: #E1CEA7;
+  font-family: inherit;
+}
+.buttons:hover{
+  opacity: 0.6;
+}
+.buttons:active{
+  transform: translateY(4px);
+}
+.row-label:hover{
+  opacity: 0.6;
+}
